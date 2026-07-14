@@ -1,0 +1,10 @@
+{
+  "name": "vizicloud-consultant-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tailwind CSS pipeline for the Vizicloud Middleman static site.",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4",
+    "tailwindcss": "^4"
+  }
+}
