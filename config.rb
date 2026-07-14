@@ -3,19 +3,18 @@
 ###
 
 # Tailwind v4 is CSS-first (no tailwind.config.js, no PostCSS config). The
-# Tailwind CLI is shelled out to directly and writes compiled CSS straight
-# into source/stylesheets/site.css, so Middleman's normal source watcher
-# picks it up like any other source file — there is no separate staging
-# directory to merge in. Middleman's external_pipeline extension requires a
-# `source:` option, so it's pointed at the same source/stylesheets directory
-# that's already part of the normal sitemap — it does no extra work beyond
-# satisfying that requirement.
+# Tailwind CLI writes compiled CSS into .tmp/dist/stylesheets/site.css — a
+# gitignored staging directory (see .gitignore) — rather than into source/
+# directly, so `middleman build` never overwrites a tracked source file with
+# minified output. `source:` tells Middleman to merge .tmp/dist into the
+# sitemap, and because the file is nested under stylesheets/ there, it's
+# served at the same /stylesheets/site.css path that `css_dir` below expects.
 activate :external_pipeline,
   name: :tailwind,
   command: (build? ?
-    "npx @tailwindcss/cli -i source/stylesheets/tailwind_input.css -o source/stylesheets/site.css --minify" :
-    "npx @tailwindcss/cli -i source/stylesheets/tailwind_input.css -o source/stylesheets/site.css --watch"),
-  source: "source/stylesheets"
+    "npx @tailwindcss/cli -i source/stylesheets/tailwind_input.css -o .tmp/dist/stylesheets/site.css --minify" :
+    "npx @tailwindcss/cli -i source/stylesheets/tailwind_input.css -o .tmp/dist/stylesheets/site.css --watch"),
+  source: ".tmp/dist"
 
 activate :meta_tags
 activate :asset_hash

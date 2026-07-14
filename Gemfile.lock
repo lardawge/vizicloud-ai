@@ -52,6 +52,7 @@ GEM
       concurrent-ruby (~> 1.0)
     hashie (5.1.0)
       logger
+    htmlcompressor (0.2.0)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     json (2.21.1)
@@ -101,6 +102,9 @@ GEM
       webrick
     middleman-meta-tags (0.7.0)
       middleman-core (>= 3.0.0)
+    middleman-minify-html (3.4.1)
+      htmlcompressor (~> 0.2.0)
+      middleman-core (>= 3.2)
     minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
@@ -155,6 +159,7 @@ DEPENDENCIES
   middleman (~> 4.5)
   middleman-autoprefixer (~> 3.0)
   middleman-meta-tags
+  middleman-minify-html
   terser (~> 1.1)
   tzinfo-data
   wdm (~> 0.1)
