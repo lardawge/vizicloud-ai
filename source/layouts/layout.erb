@@ -3,41 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= current_page.data.title || "Vizicloud — Defensive Architecture Advisory" %></title>
-  <meta name="description" content="<%= current_page.data.description || "Vizicloud is a B2B advisory firm specializing in defensive automation architecture for organizations that can't afford to get it wrong." %>">
+  <title><%= current_page.data.title || "ViziCloud — Systems & Automation for Recruiting Agencies" %></title>
+  <meta name="description" content="<%= current_page.data.description || "ViziCloud is an AI/automation engineering practice for recruiting and staffing agencies — real software engineers, not another Zapier consultant." %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <%= stylesheet_link_tag "site" %>
   <!-- Cloudflare Turnstile widget script, used by partials/_contact_form.erb -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-300">
+<body>
 
-  <header class="border-b border-slate-800">
-    <div class="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
-      <a href="/" class="font-mono text-sm tracking-widest uppercase text-slate-100">Vizicloud</a>
-      <nav aria-label="Primary">
-        <ul class="flex items-center gap-8 text-sm text-slate-300">
-          <li><a href="#pain-points" class="hover:text-slate-100">Reality</a></li>
-          <li><a href="#architecture" class="hover:text-slate-100">Approach</a></li>
-          <li><a href="#founder" class="hover:text-slate-100">Founder</a></li>
-          <li><a href="#engagement" class="hover:text-teal-300 text-teal-400">Engagement</a></li>
-        </ul>
-      </nav>
+  <header id="top" class="sticky top-0 z-50 backdrop-blur-md bg-paper/90 border-b border-paper-line">
+    <div class="wrap flex items-center justify-between py-[18px]">
+      <a href="/" class="font-display font-bold text-xl flex items-center gap-2 no-underline">
+        <span class="w-[9px] h-[9px] bg-copper rotate-45 inline-block"></span>ViziCloud
+      </a>
+      <a
+        href="#cta"
+        data-sa-event="cta_click_header"
+        class="font-mono text-[13px] border border-navy px-4 py-2.5 text-navy no-underline transition-colors hover:bg-navy hover:text-paper"
+      >Book Discovery Call</a>
     </div>
   </header>
 
   <main>
     <%= yield %>
-
-    <%# Contact partial is rendered sitewide, just before the closing </main> %>
-    <%= partial "partials/contact_form" %>
   </main>
-
-  <footer class="border-t border-slate-800">
-    <div class="mx-auto max-w-6xl px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <p class="font-mono text-xs uppercase tracking-widest text-slate-500">&copy; <%= Time.now.year %> Vizicloud. All rights reserved.</p>
-      <p class="font-mono text-xs uppercase tracking-widest text-slate-500">Defensive Architecture Advisory</p>
-    </div>
-  </footer>
 
 </body>
 </html>

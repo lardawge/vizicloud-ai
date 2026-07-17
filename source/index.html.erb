@@ -1,140 +1,218 @@
 ---
-title: Vizicloud — Defensive Architecture Advisory
-description: Vizicloud is a B2B advisory firm specializing in defensive automation architecture for organizations that can't afford to get it wrong.
+title: ViziCloud — Real Software Engineers for Recruiting Agencies
+description: Twenty-plus years of production software engineering, now pointed at your agency's busywork. Custom automation that connects your tools — engineered, not duct-taped.
 ---
 
 <%# === Hero === %>
-<section id="hero" class="border-b border-slate-800">
-  <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <p class="mb-6 font-mono text-sm uppercase tracking-widest text-teal-400">Intelligent Workflows</p>
-    <h1 class="max-w-3xl mb-6">Turn fragmented systems and manual labor into custom, intelligent workflows.</h1>
-    <p class="max-w-xl mb-10 text-lg text-slate-400">Stop losing hours to manual copy-paste work and siloed software products.
-      Vizicloud architects custom, end-to-end workflows that connects your existing tech stack and leverages AI to automate complex data processing, leaving your team free to focus on high-value work.</p>
-    <a
-      href="#engagement"
-      class="inline-block bg-teal-400 text-slate-950 font-mono text-sm uppercase tracking-widest px-8 py-4 hover:bg-teal-300 transition-colors"
-    >
-      View the Engagement Model
-    </a>
-  </div>
-</section>
-
-<%# === Pain Grid — "The Reality of Modern Automation" === %>
-<section id="pain-points" class="border-b border-slate-800">
-  <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <h2 class="mb-16 max-w-2xl">The Reality of Modern Automation</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-      <div class="border-t border-slate-800 pt-6">
-        <p class="font-mono text-4xl text-slate-700 mb-4">01</p>
-        <h3 class="mb-2">Brittle by Default</h3>
-        <p class="text-slate-400">Most automation is built to demo, not to withstand three years of undocumented edge cases.</p>
+<section id="hero" class="grid-bg relative overflow-hidden pt-20 pb-[60px]">
+  <div class="wrap grid grid-cols-1 cards:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
+    <div>
+      <div class="eyebrow">Systems &amp; Automation — Est. Practice 2003</div>
+      <h1>Real software engineers.<br>Not another Zapier consultant.</h1>
+      <p class="text-lg text-grey max-w-[46ch] mt-[22px] mb-8">Twenty-plus years building production software, now pointed at your agency's busywork. We build seamless workflows that connect your tools — so you can spend your day making placements, not fixing spreadsheets.</p>
+      <div class="flex gap-4 flex-wrap items-center">
+        <a class="btn-primary" href="#cta" data-sa-event="cta_click_hero">See If We're a Fit →</a>
+        <a class="btn-ghost" href="#work">See how it works</a>
       </div>
-      <div class="border-t border-slate-800 pt-6">
-        <p class="font-mono text-4xl text-slate-700 mb-4">02</p>
-        <h3 class="mb-2">Invisible Failure Modes</h3>
-        <p class="text-slate-400">Systems fail silently long before anyone notices — usually in the process nobody is watching.</p>
-      </div>
-      <div class="border-t border-slate-800 pt-6">
-        <p class="font-mono text-4xl text-slate-700 mb-4">03</p>
-        <h3 class="mb-2">Single Points of Failure</h3>
-        <p class="text-slate-400">One vendor, one script, one integration — and the entire operation depends on it holding.</p>
-      </div>
-      <div class="border-t border-slate-800 pt-6">
-        <p class="font-mono text-4xl text-slate-700 mb-4">04</p>
-        <h3 class="mb-2">No One Owns the Risk</h3>
-        <p class="text-slate-400">Automation gets built by whoever had time, not whoever was accountable for what happens when it breaks.</p>
-      </div>
+    </div>
+    <div class="sheet">
+      <div class="sheet-title"><span>DWG. NO. 003 — CANDIDATE INTAKE</span><span>REV B</span></div>
+      <svg viewBox="0 0 480 340" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic showing a tangled manual workflow redrawn as a clean automated pipeline">
+        <!-- left messy -->
+        <g font-family="IBM Plex Mono" font-size="10" fill="var(--color-grey)">
+          <rect x="14" y="20" width="82" height="30" fill="none" stroke="var(--color-err)" stroke-width="1.2"/>
+          <text x="20" y="39">EMAIL</text>
+          <rect x="14" y="120" width="82" height="30" fill="none" stroke="var(--color-err)" stroke-width="1.2"/>
+          <text x="20" y="139">RESUME</text>
+          <rect x="14" y="220" width="82" height="30" fill="none" stroke="var(--color-err)" stroke-width="1.2"/>
+          <text x="20" y="239">ATS</text>
+          <path d="M96 35 C 130 60, 70 80, 100 130" stroke="var(--color-err)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+          <path d="M96 135 C 60 170, 140 190, 100 225" stroke="var(--color-err)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+          <path d="M60 150 C 20 180, 150 210, 60 220" stroke="var(--color-err)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+          <text x="18" y="300" fill="var(--color-err)" font-weight="500">MANUAL · ERROR-PRONE</text>
+        </g>
+        <!-- divider -->
+        <line x1="185" y1="10" x2="185" y2="330" stroke="var(--color-paper-line)" stroke-width="1" stroke-dasharray="2 4"/>
+        <path d="M185 165 L 205 165" stroke="var(--color-line)" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <!-- right clean -->
+        <g font-family="IBM Plex Mono" font-size="10" fill="var(--color-navy)">
+          <rect x="230" y="20" width="90" height="30" fill="none" stroke="var(--color-line)" stroke-width="1.4"/>
+          <text x="238" y="39">EMAIL</text>
+          <rect x="230" y="120" width="90" height="30" fill="none" stroke="var(--color-line)" stroke-width="1.4"/>
+          <text x="238" y="139">RESUME</text>
+          <rect x="230" y="220" width="90" height="30" fill="none" stroke="var(--color-line)" stroke-width="1.4"/>
+          <text x="238" y="239">ATS</text>
+          <path d="M320 35 L 400 35 L 400 135" stroke="var(--color-line)" stroke-width="1.4" fill="none"/>
+          <path d="M320 135 L 400 135" stroke="var(--color-line)" stroke-width="1.4" fill="none"/>
+          <path d="M400 135 L 400 235 L 320 235" stroke="var(--color-line)" stroke-width="1.4" fill="none"/>
+          <circle cx="400" cy="135" r="3" fill="var(--color-line)"/>
+          <text x="410" y="300" fill="var(--color-ok)" font-weight="500" text-anchor="end">AUTOMATED · VERIFIED</text>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-line)"/>
+          </marker>
+        </defs>
+      </svg>
     </div>
   </div>
 </section>
 
-<%# === Defensive Architecture Differentiator === %>
-<section id="architecture" class="border-b border-slate-800">
-  <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <h2 class="mb-6 max-w-2xl">Defensive Architecture</h2>
-    <p class="mb-16 max-w-2xl text-slate-400">Most firms build for the happy path and patch when something breaks. We build assuming something eventually will.</p>
+<div class="wrap"><div class="rule"></div></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div class="border-t border-slate-800 pt-8">
-        <p class="font-mono text-sm uppercase tracking-widest text-slate-500 mb-4">Reactive Posture</p>
-        <ul class="space-y-4 text-slate-400">
-          <li class="border-t border-slate-800 pt-4">Ship first, monitor later</li>
-          <li class="border-t border-slate-800 pt-4">Fixes applied after the outage is reported</li>
-          <li class="border-t border-slate-800 pt-4">Undocumented dependencies discovered during incidents</li>
-          <li class="border-t border-slate-800 pt-4">Resilience treated as a future budget line</li>
-        </ul>
-      </div>
-      <div class="border-t border-teal-400 pt-8">
-        <p class="font-mono text-sm uppercase tracking-widest text-teal-400 mb-4">Vizicloud's Approach</p>
-        <ul class="space-y-4 text-slate-100">
-          <li class="border-t border-slate-800 pt-4">Failure modes mapped before deployment</li>
-          <li class="border-t border-slate-800 pt-4">Monitoring and rollback built in from day one</li>
-          <li class="border-t border-slate-800 pt-4">Dependencies documented and owned by name</li>
-          <li class="border-t border-slate-800 pt-4">Resilience priced into the original scope</li>
-        </ul>
-      </div>
+<%# === What We Do === %>
+<section id="work" class="py-[76px]">
+  <div class="wrap">
+    <div class="max-w-[640px] mb-11">
+      <div class="eyebrow">What We Do</div>
+      <h2>You show us the bottleneck. We engineer the fix.</h2>
+      <p class="text-grey text-[16.5px] mt-3.5">We don't sell you a pre-packaged software suite. We analyze your specific daily headaches and build the exact bridge you need to stop doing manual administrative work.</p>
+    </div>
+    <div class="grid grid-cols-1 cards:grid-cols-3 gap-[22px]">
+      <%= partial "partials/problem_fix_card", locals: {
+        num: "FIX / 01",
+        title: "Eliminating Manual Data Entry",
+        problem: "Downloading resumes from email, copy-pasting contact details, uploading files into your database by hand.",
+        fix: "An emailed resume finds and attaches itself to the right profile in Recruiterflow — no download, no click."
+      } %>
+      <%= partial "partials/problem_fix_card", locals: {
+        num: "FIX / 02",
+        title: "Automated Interview Summaries",
+        problem: "Forty-five minutes after every screening call spent cleaning notes and writing a client-ready summary.",
+        fix: "An AI pipeline takes the raw transcript and instantly produces a clean, submission-ready summary."
+      } %>
+      <%= partial "partials/problem_fix_card", locals: {
+        num: "FIX / 03",
+        title: "Escaping Clunky Software",
+        problem: "Your ATS or CRM doesn't fit anymore, but you're afraid of losing your database if you switch.",
+        fix: "An honest platform assessment, plus a fully handled technical migration of your data."
+      } %>
+    </div>
+    <div class="mt-9">
+      <a class="btn-primary" href="#cta" data-sa-event="cta_click_midpage">Book a Free Discovery Call →</a>
     </div>
   </div>
 </section>
 
-<%# === Founder Executive Background === %>
-<section id="founder" class="border-b border-slate-800">
-  <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <h2 class="mb-16">Leadership</h2>
+<div class="wrap"><div class="rule"></div></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <div>
-        <!-- Monogram block in place of a headshot photo -->
-        <div class="w-32 h-32 border border-slate-700 flex items-center justify-center">
-          <span class="font-mono text-3xl text-slate-300">[FI]</span>
+<%# === Why ViziCloud === %>
+<section id="why" class="py-[76px]">
+  <div class="wrap grid grid-cols-1 cards:grid-cols-2 gap-[50px] items-start">
+    <div>
+      <div class="eyebrow">Why ViziCloud</div>
+      <h2>Two decades of engineering discipline, applied to your desk.</h2>
+      <p class="text-grey mt-[18px]">Anyone can stitch together a fragile, low-code setup. Those quick fixes break the moment an API changes, leaving you with no support. We've been designing production software systems since 2003 — long before "automation agency" was a category.</p>
+      <div class="mt-7">
+        <%= partial "partials/stamp", locals: { text: "Engineered, Not Duct-Taped" } %>
+      </div>
+    </div>
+    <ul class="list-none m-0 p-0">
+      <li class="grid grid-cols-[110px_1fr] gap-[18px] py-5 border-t border-paper-line last:border-b">
+        <span class="font-mono text-[11px] text-line tracking-[0.06em] uppercase pt-0.5">Spec 01</span>
+        <div>
+          <h3 class="mb-1.5">Engineering-grade foundation</h3>
+          <p class="m-0 text-grey text-[14.5px]">Rigorous standards from real software systems, applied to every automation we build.</p>
         </div>
+      </li>
+      <li class="grid grid-cols-[110px_1fr] gap-[18px] py-5 border-t border-paper-line last:border-b">
+        <span class="font-mono text-[11px] text-line tracking-[0.06em] uppercase pt-0.5">Spec 02</span>
+        <div>
+          <h3 class="mb-1.5">Built to scale, built to fail gracefully</h3>
+          <p class="m-0 text-grey text-[14.5px]">Clean, reliable pipelines architected to grow with your business and handle errors without breaking.</p>
+        </div>
+      </li>
+      <li class="grid grid-cols-[110px_1fr] gap-[18px] py-5 border-t border-paper-line last:border-b">
+        <span class="font-mono text-[11px] text-line tracking-[0.06em] uppercase pt-0.5">Spec 03</span>
+        <div>
+          <h3 class="mb-1.5">You own what we build</h3>
+          <p class="m-0 text-grey text-[14.5px]">Documented, standard workflows your team can run — not a black box. Retainers available, never required.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<%# === Is This a Fit === %>
+<section id="fit" class="py-[76px]">
+  <div class="wrap">
+    <div class="max-w-[640px] mb-11">
+      <div class="eyebrow">Is This A Fit?</div>
+      <h2>Built for agencies making a direct decision.</h2>
+    </div>
+    <div class="grid grid-cols-1 cards:grid-cols-2 border border-paper-line">
+      <div class="p-8 border-b cards:border-b-0 cards:border-r border-paper-line">
+        <h4 class="font-mono text-xs tracking-[0.08em] uppercase mb-4 text-ok">Good fit if</h4>
+        <ul class="list-none m-0 p-0">
+          <li class="py-2.5 border-t border-dashed border-paper-line first:border-t-0 text-[14.5px] text-navy">You run an ATS/CRM already — Recruiterflow, Bullhorn, or similar</li>
+          <li class="py-2.5 border-t border-dashed border-paper-line first:border-t-0 text-[14.5px] text-navy">An owner or small ops team can decide to move forward</li>
+          <li class="py-2.5 border-t border-dashed border-paper-line first:border-t-0 text-[14.5px] text-navy">You feel the bottleneck weekly and haven't had time to fix it</li>
+        </ul>
       </div>
-      <div class="md:col-span-2">
-        <h3 class="mb-1">[FOUNDER_NAME]</h3>
-        <p class="mb-6 font-mono text-sm uppercase tracking-widest text-teal-400">[FOUNDER_TITLE]</p>
-        <p class="mb-4 text-slate-400">
-          [FOUNDER_NAME] has spent [YEARS_EXPERIENCE] years designing and hardening automated systems for
-          organizations that could not afford them to fail, including engagements at [PRIOR_FIRM_1] and
-          [PRIOR_FIRM_2]. [FOUNDER_NAME] holds [CREDENTIAL] and founded Vizicloud on a single principle:
-        </p>
-        <p class="border-l border-teal-400 pl-6 text-slate-100 italic">
-          "[PHILOSOPHY_QUOTE]"
-        </p>
+      <div class="p-8">
+        <h4 class="font-mono text-xs tracking-[0.08em] uppercase mb-4 text-err">Probably not if</h4>
+        <ul class="list-none m-0 p-0">
+          <li class="py-2.5 border-t border-dashed border-paper-line first:border-t-0 text-[14.5px] text-navy">You need multi-stakeholder procurement or a formal RFP</li>
+          <li class="py-2.5 border-t border-dashed border-paper-line first:border-t-0 text-[14.5px] text-navy">Your decision requires enterprise-scale legal review</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<%# === Two-Step Engagement Model === %>
-<section id="engagement">
-  <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <h2 class="mb-16 max-w-2xl">The Engagement Model</h2>
+<div class="wrap"><div class="rule"></div></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div class="border-t border-slate-800 pt-8">
-        <p class="font-mono text-sm uppercase tracking-widest text-slate-500 mb-2">Step 1</p>
-        <h3 class="mb-4">Paid Assessment</h3>
-        <p class="mb-6 text-slate-400">A fixed-scope, fixed-fee diagnostic engagement. We map your current automation footprint, identify failure modes, and hand you a prioritized findings report — no retainer required to start.</p>
-        <p class="font-mono text-xs uppercase tracking-widest text-slate-500 mb-3">Included</p>
-        <ul class="space-y-2 text-slate-400 text-sm">
-          <li class="border-t border-slate-800 pt-2">Full architecture and dependency review</li>
-          <li class="border-t border-slate-800 pt-2">Failure-mode and single-point-of-failure mapping</li>
-          <li class="border-t border-slate-800 pt-2">Written findings report with prioritized recommendations</li>
-        </ul>
+<%# === Process === %>
+<section id="process" class="py-[76px]">
+  <div class="wrap">
+    <div class="max-w-[640px] mb-11">
+      <div class="eyebrow">Our Process</div>
+      <h2>A predictable, transparent path to a manual-free desk.</h2>
+      <p class="text-grey text-[16.5px] mt-3.5">We never write a line of code or bill you for implementation until we both agree on the exact technical blueprint.</p>
+    </div>
+    <div class="grid grid-cols-2 proc:grid-cols-4 border-t border-l border-paper-line">
+      <div class="p-[26px_22px] border-r border-b border-paper-line">
+        <div class="font-display text-3xl font-bold text-paper-line">01</div>
+        <h3 class="mt-2.5 mb-2">Free Discovery Call</h3>
+        <p class="text-[13.5px] text-grey m-0">30 minutes on your single most painful bottleneck.</p>
       </div>
-
-      <div class="border-t border-teal-400 pt-8">
-        <p class="font-mono text-sm uppercase tracking-widest text-teal-400 mb-2">Step 2</p>
-        <h3 class="mb-4">Retainer</h3>
-        <p class="mb-6 text-slate-400">An ongoing defensive-architecture partnership. We implement the assessment's recommendations and remain accountable for the system's resilience as your business changes.</p>
-        <p class="font-mono text-xs uppercase tracking-widest text-slate-500 mb-3">Included</p>
-        <ul class="space-y-2 text-slate-100 text-sm">
-          <li class="border-t border-slate-800 pt-2">Implementation of assessment recommendations</li>
-          <li class="border-t border-slate-800 pt-2">Ongoing monitoring and rollback ownership</li>
-          <li class="border-t border-slate-800 pt-2">Direct access for architecture decisions as they arise</li>
-        </ul>
+      <div class="p-[26px_22px] border-r border-b border-paper-line">
+        <div class="font-display text-3xl font-bold text-paper-line">02</div>
+        <h3 class="mt-2.5 mb-2">Flat-Fee Systems Audit</h3>
+        <p class="text-[13.5px] text-grey m-0">A complete visual blueprint, for one transparent fee.</p>
+      </div>
+      <div class="p-[26px_22px] border-r border-b border-paper-line">
+        <div class="font-display text-3xl font-bold text-paper-line">03</div>
+        <h3 class="mt-2.5 mb-2">Scoped Implementation</h3>
+        <p class="text-[13.5px] text-grey m-0">Build, test, deploy — within a strictly defined scope.</p>
+      </div>
+      <div class="p-[26px_22px] border-r border-b border-paper-line">
+        <div class="font-display text-3xl font-bold text-paper-line">04</div>
+        <h3 class="mt-2.5 mb-2">Optional Ongoing Support</h3>
+        <p class="text-[13.5px] text-grey m-0">Advisory and maintenance as your business scales.</p>
       </div>
     </div>
   </div>
 </section>
+
+<%# === Footer CTA === %>
+<footer id="cta" class="bg-navy pt-16 pb-10 mt-5">
+  <div class="wrap">
+    <div class="font-mono text-xs uppercase tracking-[0.14em] text-[#7C8FA6] flex items-center gap-2.5 mb-3.5">
+      <span class="w-[22px] h-px bg-[#7C8FA6] inline-block"></span>Ready When You Are
+    </div>
+    <h2 class="text-paper">Book a Free 30-Minute Tech Discovery Call.</h2>
+    <p class="text-[#AFC0D1] max-w-[52ch] mt-4 mb-8">No pitch deck. No pressure. Just a conversation about the one bottleneck costing you the most time this month.</p>
+
+    <div class="max-w-lg">
+      <%= partial "partials/contact_form" %>
+    </div>
+
+    <div class="mt-12 pt-[22px] border-t border-[#2A3B54] flex flex-col cards:flex-row justify-between gap-2 font-mono text-xs text-[#7C8FA6]">
+      <span>VIZICLOUD SYSTEMS &amp; AUTOMATION</span>
+      <span>DWG SET 01–04 / EST. 2003</span>
+    </div>
+  </div>
+</footer>

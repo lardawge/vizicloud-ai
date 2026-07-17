@@ -61,6 +61,9 @@
           form.classList.add("hidden");
           successEl.classList.remove("hidden");
           resetTurnstile();
+          if (window.sa_event) {
+            window.sa_event("booking_completed");
+          }
         } else {
           return response.json().then(function () {
             throw new Error("submission_failed");

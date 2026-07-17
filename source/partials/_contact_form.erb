@@ -1,70 +1,69 @@
-<%# === Contact Form (Formspree + Turnstile, AJAX-only, no native fallback) === %>
-<section id="contact" class="border-t border-slate-800 bg-slate-900/40">
-  <div class="mx-auto max-w-2xl px-6 py-24 md:py-32">
-    <h2 class="mb-4">Start a Conversation</h2>
-    <p class="mb-12 text-slate-400">Tell us where the exposure is. We'll respond within one business day.</p>
-
-    <div id="contact-form-wrapper">
-      <form id="contact-form" novalidate>
-        <div class="mb-6">
-          <label for="cf-name" class="block mb-2 text-sm font-mono uppercase tracking-widest text-slate-400">Name</label>
-          <input
-            type="text"
-            id="cf-name"
-            name="name"
-            required
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-slate-100 focus:outline-none focus:border-teal-400"
-          >
-        </div>
-
-        <div class="mb-6">
-          <label for="cf-email" class="block mb-2 text-sm font-mono uppercase tracking-widest text-slate-400">Email</label>
-          <input
-            type="email"
-            id="cf-email"
-            name="email"
-            required
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-slate-100 focus:outline-none focus:border-teal-400"
-          >
-        </div>
-
-        <div class="mb-6">
-          <label for="cf-message" class="block mb-2 text-sm font-mono uppercase tracking-widest text-slate-400">Message</label>
-          <textarea
-            id="cf-message"
-            name="message"
-            rows="5"
-            required
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-slate-100 focus:outline-none focus:border-teal-400"
-          ></textarea>
-        </div>
-
-        <!-- Honeypot: hidden from real users, catches naive bots -->
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-        <!-- Formspree submission subject line -->
-        <input type="hidden" name="_subject" value="New Inquiry — Vizicloud Site">
-
-        <div class="cf-turnstile mb-6" data-sitekey="<%= config[:turnstile_site_key] %>" data-callback="onTurnstileSuccess"></div>
-
-        <button
-          type="submit"
-          id="cf-submit"
-          disabled
-          class="bg-teal-400 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-slate-950 font-mono text-sm uppercase tracking-widest px-8 py-4 hover:bg-teal-300 transition-colors"
-        >
-          Send Inquiry
-        </button>
-
-        <p id="cf-error" class="hidden mt-4 text-sm text-red-400" role="alert"></p>
-      </form>
-
-      <div id="cf-success" class="hidden">
-        <p class="text-lg text-slate-100">Message received. We'll be in touch shortly.</p>
-      </div>
+<%# === Contact Form (Formspree + Turnstile, AJAX-only) ===
+     Lives inside index.html.erb's <footer id="cta"> section, which supplies
+     the heading/copy. This form is the actual v1 conversion mechanism —
+     no scheduler vendor has been chosen yet (spec §8.1/§8.2), so it also
+     serves as the documented fallback a future Calendly/Cal.com/etc. embed
+     (spec §5.1) would degrade to if it failed to load. %>
+<div id="contact-form-wrapper">
+  <form id="contact-form" novalidate>
+    <div class="mb-5">
+      <label for="cf-name" class="block mb-2 font-mono text-xs uppercase tracking-[0.08em] text-[#AFC0D1]">Name</label>
+      <input
+        type="text"
+        id="cf-name"
+        name="name"
+        required
+        class="w-full bg-white border border-paper-line px-4 py-3 text-navy focus:outline-none focus:border-copper"
+      >
     </div>
+
+    <div class="mb-5">
+      <label for="cf-email" class="block mb-2 font-mono text-xs uppercase tracking-[0.08em] text-[#AFC0D1]">Email</label>
+      <input
+        type="email"
+        id="cf-email"
+        name="email"
+        required
+        class="w-full bg-white border border-paper-line px-4 py-3 text-navy focus:outline-none focus:border-copper"
+      >
+    </div>
+
+    <div class="mb-5">
+      <label for="cf-message" class="block mb-2 font-mono text-xs uppercase tracking-[0.08em] text-[#AFC0D1]">Message</label>
+      <textarea
+        id="cf-message"
+        name="message"
+        rows="5"
+        required
+        class="w-full bg-white border border-paper-line px-4 py-3 text-navy focus:outline-none focus:border-copper"
+      ></textarea>
+    </div>
+
+    <!-- Honeypot: hidden from real users, catches naive bots -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <!-- Formspree submission subject line -->
+    <input type="hidden" name="_subject" value="New Inquiry — ViziCloud Site">
+
+    <div class="cf-turnstile mb-5" data-sitekey="<%= config[:turnstile_site_key] %>" data-callback="onTurnstileSuccess"></div>
+
+    <button
+      type="submit"
+      id="cf-submit"
+      disabled
+      data-sa-event="cta_click_footer"
+      class="btn-primary disabled:bg-paper-line disabled:text-grey disabled:cursor-not-allowed"
+    >
+      Book the Call →
+    </button>
+
+    <p id="cf-error" class="hidden mt-4 text-sm text-err" role="alert"></p>
+  </form>
+
+  <div id="cf-success" class="hidden">
+    <p class="text-lg text-paper">Message received. We'll be in touch shortly.</p>
   </div>
-</section>
+</div>
 
 <%# Formspree endpoint id (YOUR_FORM_ID) is a placeholder — see source/javascripts/contact_form.js %>
 <%= javascript_include_tag "contact_form" %>

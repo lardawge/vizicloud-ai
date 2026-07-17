@@ -1,0 +1,15 @@
+<%#
+  Problem/Fix card component (spec §3.3) — locals:
+    num:     e.g. "FIX / 01"
+    title:   card heading
+    problem: copy for the Problem tag
+    fix:     copy for the Fix tag
+%>
+<div class="bg-white border border-paper-line p-[26px_22px]">
+  <div class="font-mono text-[11px] text-line tracking-[0.08em]"><%= num %></div>
+  <h3 class="mt-2.5 mb-3.5"><%= title %></h3>
+  <span class="tag-problem">Problem</span>
+  <p class="text-[14.5px] text-grey mb-4"><%= problem %></p>
+  <span class="tag-fix">Fix</span>
+  <p class="text-[14.5px] text-grey m-0"><%= fix %></p>
+</div>
