@@ -32,6 +32,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-paper text-navy font-sans antialiased;
     line-height: 1.55;
@@ -66,6 +70,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
     * {
       transition: none !important;
       animation: none !important;

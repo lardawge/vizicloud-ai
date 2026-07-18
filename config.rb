@@ -21,17 +21,7 @@ activate :asset_hash
 
 set :css_dir, 'stylesheets'
 
-set :turnstile_site_key, '1x00000000000000000000AA' # CF test key, always passes
-
-configure :development do
-  # Local dev / middleman server
-  set :turnstile_site_key, '1x00000000000000000000AA' # Turnstile test key (always passes)
-end
-
-configure :build do
-  # Production build
-  set :turnstile_site_key, ENV.fetch('TURNSTILE_SITE_KEY', '0x4AAAAAAD16j1cFmO0nn3ql')
-end
+set :calendly_url, 'https://calendly.com/lucidbleu/vizicloud-discovery-call'
 
 # source/CNAME is a plain static file — Middleman copies it into build/
 # automatically like any other source asset, no reference needed here.

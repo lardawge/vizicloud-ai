@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <%= stylesheet_link_tag "site" %>
-  <!-- Cloudflare Turnstile widget script, used by partials/_contact_form.erb -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <!-- 100% privacy-first analytics -->
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </head>
@@ -21,7 +19,9 @@
         <span class="w-[9px] h-[9px] bg-copper rotate-45 inline-block"></span>ViziCloud
       </a>
       <a
-        href="#cta"
+        href="<%= config[:calendly_url] %>"
+        target="_blank"
+        rel="noopener noreferrer"
         data-sa-event="cta_click_header"
         class="font-mono text-[13px] border border-navy px-4 py-2.5 text-navy no-underline transition-colors hover:bg-navy hover:text-paper"
       >Book Discovery Call</a>

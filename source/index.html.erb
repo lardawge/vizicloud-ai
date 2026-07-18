@@ -7,11 +7,11 @@ description: Twenty-plus years of production software engineering, now pointed a
 <section id="hero" class="grid-bg relative overflow-hidden pt-20 pb-[60px]">
   <div class="wrap grid grid-cols-1 cards:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
     <div>
-      <div class="eyebrow">Systems &amp; Automation — Est. Practice 2003</div>
-      <h1>Real software engineers.<br>Not another Zapier consultant.</h1>
+      <div class="eyebrow">Systems &amp; Automation</div>
+      <h1>Real software engineers.<br>Not another automation consultant.</h1>
       <p class="text-lg text-grey max-w-[46ch] mt-[22px] mb-8">Twenty-plus years building production software, now pointed at your agency's busywork. We build seamless workflows that connect your tools — so you can spend your day making placements, not fixing spreadsheets.</p>
       <div class="flex gap-4 flex-wrap items-center">
-        <a class="btn-primary" href="#cta" data-sa-event="cta_click_hero">See If We're a Fit →</a>
+        <a class="btn-primary" href="#fit" data-sa-event="cta_click_hero">See If We're a Fit →</a>
         <a class="btn-ghost" href="#work">See how it works</a>
       </div>
     </div>
@@ -89,7 +89,7 @@ description: Twenty-plus years of production software engineering, now pointed a
       } %>
     </div>
     <div class="mt-9">
-      <a class="btn-primary" href="#cta" data-sa-event="cta_click_midpage">Book a Free Discovery Call →</a>
+      <a class="btn-primary" href="<%= config[:calendly_url] %>" target="_blank" rel="noopener noreferrer" data-sa-event="cta_click_midpage">Book a Free Discovery Call →</a>
     </div>
   </div>
 </section>
@@ -206,9 +206,7 @@ description: Twenty-plus years of production software engineering, now pointed a
     <h2 class="text-paper">Book a Free 30-Minute Tech Discovery Call.</h2>
     <p class="text-[#AFC0D1] max-w-[52ch] mt-4 mb-8">No pitch deck. No pressure. Just a conversation about the one bottleneck costing you the most time this month.</p>
 
-    <div class="max-w-lg">
-      <%= partial "partials/contact_form" %>
-    </div>
+    <a class="btn-primary" href="<%= config[:calendly_url] %>" target="_blank" rel="noopener noreferrer" data-sa-event="cta_click_footer" style="box-shadow:4px 4px 0 #0A1220;">Book the Call →</a>
 
     <div class="mt-12 pt-[22px] border-t border-[#2A3B54] flex flex-col cards:flex-row justify-between gap-2 font-mono text-xs text-[#7C8FA6]">
       <span>VIZICLOUD SYSTEMS &amp; AUTOMATION</span>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViziCloud — Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDF1F5;
+    --paper-line:#C9D6E3;
+    --navy:#16253D;
+    --line:#3E7CB1;
+    --copper:#C0703B;
+    --copper-dark:#9C5527;
+    --grey:#54677C;
+    --white:#FFFFFF;
+    --ok:#2F7A52;
+    --err:#B23A3A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;}
+  .grid-bg{
+    background-image:linear-gradient(var(--paper-line) 1px, transparent 1px),linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;margin:0;color:var(--navy);}
+  code, .mono{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--line);
+    display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--line);display:inline-block;}
+  .rule{height:1px;background:var(--paper-line);}
+
+  /* ---- Cover ---- */
+  .cover{padding:90px 0 70px;}
+  .cover h1{font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-0.01em;line-height:1.05;max-width:14ch;}
+  .cover .sub{font-size:18px;color:var(--grey);max-width:52ch;margin:22px 0 0;}
+  .cover .meta{
+    margin-top:40px;display:flex;gap:40px;font-family:'IBM Plex Mono';font-size:12px;color:var(--grey);
+    border-top:1px solid var(--paper-line);padding-top:20px;
+  }
+  .cover .meta div span{display:block;color:var(--line);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;margin-bottom:4px;}
+
+  nav.toc{background:var(--white);border:1px solid var(--paper-line);padding:22px 26px;margin:0 0 10px;}
+  nav.toc .sheet-title{font-family:'IBM Plex Mono';font-size:11px;color:var(--grey);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px dashed var(--paper-line);padding-bottom:10px;margin-bottom:14px;}
+  nav.toc ol{margin:0;padding:0;list-style:none;columns:2;gap:24px;}
+  nav.toc li{padding:6px 0;}
+  nav.toc a{text-decoration:none;font-size:14.5px;color:var(--navy);}
+  nav.toc a:hover{color:var(--line);}
+  nav.toc .n{font-family:'IBM Plex Mono';color:var(--line);margin-right:8px;font-size:12.5px;}
+
+  section{padding:64px 0;}
+  .section-head{max-width:680px;margin-bottom:36px;}
+  .section-head p{color:var(--grey);font-size:16px;margin-top:12px;}
+
+  /* ---- Principle ---- */
+  .principle-box{
+    background:var(--navy);color:var(--paper);padding:44px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  }
+  .principle-box h3{color:#fff;font-size:22px;margin-bottom:12px;}
+  .principle-box p{color:#AFC0D1;font-size:15px;margin:0;}
+  .principle-box .stamp-mini{
+    font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    border:1.5px solid var(--copper);color:var(--copper);padding:8px 14px;display:inline-block;margin-top:16px;transform:rotate(-2deg);
+  }
+
+  /* ---- Color swatches ---- */
+  .swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .swatch{border:1px solid var(--paper-line);background:var(--white);}
+  .swatch .chip{height:90px;}
+  .swatch .info{padding:14px 16px;}
+  .swatch .name{font-family:'Space Grotesk';font-weight:600;font-size:15px;}
+  .swatch .hex{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--grey);margin-top:3px;}
+  .swatch .use{font-size:12.5px;color:var(--grey);margin-top:8px;}
+
+  /* ---- Typography ---- */
+  .type-row{border-top:1px solid var(--paper-line);padding:26px 0;display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:baseline;}
+  .type-row:last-child{border-bottom:1px solid var(--paper-line);}
+  .type-row .tlabel{font-family:'IBM Plex Mono';font-size:11px;color:var(--line);letter-spacing:.06em;text-transform:uppercase;}
+  .type-row .tspec{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--grey);margin-top:6px;}
+  .specimen-display{font-family:'Space Grotesk';font-weight:700;font-size:42px;color:var(--navy);letter-spacing:-0.01em;}
+  .specimen-h2{font-family:'Space Grotesk';font-weight:600;font-size:28px;color:var(--navy);}
+  .specimen-body{font-family:'IBM Plex Sans';font-size:17px;color:var(--navy);max-width:56ch;}
+  .specimen-mono{font-family:'IBM Plex Mono';font-size:14px;color:var(--navy);}
+
+  /* ---- Scale table ---- */
+  .scale-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono';font-size:13px;}
+  .scale-table th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--line);padding:0 0 10px;border-bottom:1px solid var(--paper-line);}
+  .scale-table td{padding:12px 0;border-bottom:1px dashed var(--paper-line);color:var(--navy);}
+
+  /* ---- Components ---- */
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .comp-card{background:var(--white);border:1px solid var(--paper-line);padding:26px;}
+  .comp-card .clabel{font-family:'IBM Plex Mono';font-size:11px;color:var(--grey);letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;}
+  .demo-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+
+  .btn-primary{
+    font-family:'IBM Plex Mono',monospace;background:var(--copper);color:var(--white);border:none;padding:14px 24px;font-size:13.5px;
+    letter-spacing:.03em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+    box-shadow:4px 4px 0 var(--navy);
+  }
+  .btn-ghost{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--navy);text-decoration:underline;text-underline-offset:4px;}
+
+  .tag{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;}
+  .tag.problem{background:#FBEAE7;color:var(--err);}
+  .tag.fix{background:#E6F2EB;color:var(--ok);}
+
+  .stamp{
+    font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    border:2px solid var(--copper);color:var(--copper-dark);padding:10px 16px;display:inline-block;transform:rotate(-3deg);
+  }
+
+  .mini-card{background:var(--white);border:1px solid var(--paper-line);padding:20px;}
+  .mini-card .num{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--line);letter-spacing:.08em;}
+  .mini-card h4{font-size:16px;margin:8px 0 6px;font-weight:600;}
+  .mini-card p{font-size:13px;color:var(--grey);margin:0;}
+
+  .spec-note{font-size:13px;color:var(--grey);margin-top:14px;}
+
+  /* ---- Motifs ---- */
+  .motif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .motif-card{background:var(--white);border:1px solid var(--paper-line);padding:20px;text-align:center;}
+  .motif-card svg{margin-bottom:12px;}
+  .motif-card .mname{font-family:'Space Grotesk';font-weight:600;font-size:14.5px;}
+  .motif-card .mdesc{font-size:12.5px;color:var(--grey);margin-top:6px;}
+
+  /* ---- Do/Don't ---- */
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--paper-line);}
+  .dd-col{padding:30px;}
+  .dd-col.do{border-right:1px solid var(--paper-line);}
+  .dd-col h4{font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px;}
+  .dd-col.do h4{color:var(--ok);}
+  .dd-col.dont h4{color:var(--err);}
+  .dd-col ul{margin:0;padding:0;list-style:none;}
+  .dd-col li{padding:10px 0;border-top:1px dashed var(--paper-line);font-size:14px;}
+  .dd-col li:first-child{border-top:none;}
+
+  /* ---- Voice ---- */
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .voice-card{border-top:1px solid var(--paper-line);padding-top:16px;}
+  .voice-card .vlabel{font-family:'IBM Plex Mono';font-size:11px;color:var(--line);letter-spacing:.06em;text-transform:uppercase;}
+  .voice-card h4{font-size:16px;margin:8px 0 6px;}
+  .voice-card p{font-size:13.5px;color:var(--grey);margin:0;}
+
+  footer{background:var(--navy);color:var(--paper);padding:50px 0;margin-top:20px;}
+  footer .foot-row{display:flex;justify-content:space-between;font-family:'IBM Plex Mono';font-size:12px;color:#7C8FA6;}
+
+  @media (max-width:820px){
+    .swatches,.comp-grid,.motif-grid,.dd-grid,.voice-grid,.principle-box{grid-template-columns:1fr;}
+    .dd-col.do{border-right:none;border-bottom:1px solid var(--paper-line);}
+    nav.toc ol{columns:1;}
+    .type-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<section class="cover grid-bg">
+  <div class="wrap">
+    <div class="eyebrow">Brand &amp; Design Reference</div>
+    <h1>ViziCloud Style Guide</h1>
+    <p class="sub">The Blueprint system — technical, precise, engineered. This is the reference for every page, deck, and asset built after this one.</p>
+    <div class="meta">
+      <div><span>Version</span>1.0</div>
+      <div><span>Direction</span>The Blueprint</div>
+      <div><span>Status</span>Approved</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="sheet-title">Contents — Sheet Index</div>
+    <ol>
+      <li><span class="n">01</span><a href="#principle">Design Principle</a></li>
+      <li><span class="n">02</span><a href="#color">Color System</a></li>
+      <li><span class="n">03</span><a href="#type">Typography</a></li>
+      <li><span class="n">04</span><a href="#grid">Grid &amp; Spacing</a></li>
+      <li><span class="n">05</span><a href="#components">Components</a></li>
+      <li><span class="n">06</span><a href="#motifs">Signature Motifs</a></li>
+      <li><span class="n">07</span><a href="#voice">Voice &amp; Tone</a></li>
+      <li><span class="n">08</span><a href="#dodont">Do / Don't</a></li>
+    </ol>
+  </nav>
+</div>
+
+<section id="principle">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 — Design Principle</div>
+      <h2 class="specimen-h2">Engineered, not decorated.</h2>
+    </div>
+    <div class="principle-box">
+      <div>
+        <h3>The idea</h3>
+        <p>ViziCloud sells engineering discipline, not marketing polish. Every visual choice should read like it came from a drafting table, not a template: annotated diagrams, dimension lines, precise grids, technical labels. The design should look like proof of the same rigor the copy claims — never like decoration sitting on top of it.</p>
+      </div>
+      <div>
+        <h3>How to apply it</h3>
+        <p>When in doubt, ask: would this appear on an engineering drawing or a systems audit? Grid backgrounds, dashed reference lines, monospace annotations, and stamped approvals all pass that test. Gradients, soft shadows, rounded bubbly shapes, and stock-photo hero imagery do not.</p>
+        <div class="stamp-mini">Reference: DWG. Set 01–04</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="color">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 — Color System</div>
+      <h2 class="specimen-h2">Six colors. Every one has a job.</h2>
+      <p>No decorative color. If a color appears, it's because it's carrying information — status, hierarchy, or emphasis.</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#16253D;"></div><div class="info"><div class="name">Navy</div><div class="hex">#16253D</div><div class="use">Primary text, headlines, footer background</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#3E7CB1;"></div><div class="info"><div class="name">Line Blue</div><div class="hex">#3E7CB1</div><div class="use">Eyebrows, diagram lines, links, secondary emphasis</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#C0703B;"></div><div class="info"><div class="name">Copper</div><div class="hex">#C0703B</div><div class="use">Primary CTA, stamps — the one warm accent, used sparingly</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#EDF1F5;border-bottom:1px solid #C9D6E3;"></div><div class="info"><div class="name">Paper</div><div class="hex">#EDF1F5</div><div class="use">Page background</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#54677C;"></div><div class="info"><div class="name">Grey</div><div class="hex">#54677C</div><div class="use">Body copy, supporting text</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#2F7A52;"></div><div class="info"><div class="name">Verified Green</div><div class="hex">#2F7A52</div><div class="use">"Fix" states, confirmations, positive status only</div></div></div>
+    </div>
+    <p class="spec-note">Reserve <code>#B23A3A</code> (Error Red) strictly for "Problem" labeling in before/after pairs — never as a general accent. Copper is the only warm color permitted on the page; if a design draft has two warm accents, remove one.</p>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="type">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 — Typography</div>
+      <h2 class="specimen-h2">Three faces, three jobs.</h2>
+      <p>Space Grotesk carries the personality. IBM Plex Sans stays quiet and legible. IBM Plex Mono does the annotating — it's the "handwriting" of the blueprint.</p>
+    </div>
+    <div class="type-row">
+      <div><div class="tlabel">Display</div><div class="tspec">Space Grotesk<br>600–700</div></div>
+      <div class="specimen-display">Real software engineers.</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tlabel">Heading</div><div class="tspec">Space Grotesk<br>600</div></div>
+      <div class="specimen-h2">You show us the bottleneck.</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tlabel">Body</div><div class="tspec">IBM Plex Sans<br>400, 17px, 1.55 line-height</div></div>
+      <div class="specimen-body">We don't sell you a pre-packaged software suite. We analyze your specific daily headaches and build the exact bridge you need.</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tlabel">Mono / Utility</div><div class="tspec">IBM Plex Mono<br>400–500, labels &amp; data only</div></div>
+      <div class="specimen-mono">DWG. NO. 003 — CANDIDATE INTAKE / REV B</div>
+    </div>
+    <table class="scale-table" style="margin-top:30px;">
+      <tr><th>Token</th><th>Size</th><th>Weight</th><th>Use</th></tr>
+      <tr><td>display-1</td><td>clamp(34–58px)</td><td>700</td><td>Hero headline only</td></tr>
+      <tr><td>h2</td><td>clamp(26–38px)</td><td>600</td><td>Section headlines</td></tr>
+      <tr><td>h3</td><td>18–20px</td><td>600</td><td>Card / exhibit titles</td></tr>
+      <tr><td>body</td><td>15–18px</td><td>400</td><td>Paragraph copy</td></tr>
+      <tr><td>mono-label</td><td>10.5–13px</td><td>400–500</td><td>Eyebrows, tags, captions, stamps</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="grid">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">04 — Grid &amp; Spacing</div>
+      <h2 class="specimen-h2">Everything sits on a 32px module.</h2>
+      <p>The hero's visible grid isn't just texture — it's the literal spacing unit the whole page is built on.</p>
+    </div>
+    <table class="scale-table">
+      <tr><th>Token</th><th>Value</th><th>Use</th></tr>
+      <tr><td>unit</td><td>8px</td><td>Base unit</td></tr>
+      <tr><td>gap-sm</td><td>16px (2×)</td><td>Inline gaps, tag spacing</td></tr>
+      <tr><td>gap-md</td><td>32px (4×)</td><td>Card gutters, grid module</td></tr>
+      <tr><td>gap-lg</td><td>56px (7×)</td><td>Column gaps in hero / two-up layouts</td></tr>
+      <tr><td>section-y</td><td>72–80px</td><td>Vertical padding between sections</td></tr>
+      <tr><td>hairline</td><td>1px solid #C9D6E3</td><td>All dividers — no thick rules, no shadows for separation</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="components">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">05 — Components</div>
+      <h2 class="specimen-h2">Buttons, tags, stamps, cards.</h2>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="clabel">Buttons</div>
+        <div class="demo-row">
+          <a class="btn-primary" href="#">Book Discovery Call →</a>
+          <a class="btn-ghost" href="#">See how it works</a>
+        </div>
+        <p class="spec-note">Primary: Copper fill, navy offset shadow (4px/4px), moves to 2px/2px on hover — a literal "pressed" registration shift. One primary CTA per section, max.</p>
+      </div>
+      <div class="comp-card">
+        <div class="clabel">Problem / Fix Tags</div>
+        <div class="demo-row">
+          <span class="tag problem">Problem</span>
+          <span class="tag fix">Fix</span>
+        </div>
+        <p class="spec-note">Always appear as a pair, Problem before Fix. Never used as standalone status labels elsewhere.</p>
+      </div>
+      <div class="comp-card">
+        <div class="clabel">Stamp</div>
+        <div class="demo-row"><span class="stamp">Engineered, Not Duct-Taped</span></div>
+        <p class="spec-note">Reserve for one credibility claim per page. Rotation stays between -2° and -4° — never straight, never more crooked.</p>
+      </div>
+      <div class="comp-card">
+        <div class="clabel">Card</div>
+        <div class="mini-card">
+          <div class="num">FIX / 01</div>
+          <h4>Eliminating Manual Data Entry</h4>
+          <p>1px hairline border, no shadow, white on paper.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="motifs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">06 — Signature Motifs</div>
+      <h2 class="specimen-h2">The visual vocabulary that makes this ours.</h2>
+    </div>
+    <div class="motif-grid">
+      <div class="motif-card">
+        <svg width="100%" height="70" viewBox="0 0 200 70"><path d="M10 55 C 40 20, 60 60, 90 30" stroke="#B23A3A" stroke-width="1.4" fill="none" stroke-dasharray="3 3"/><path d="M110 30 L 150 30 L 150 55 L 190 55" stroke="#3E7CB1" stroke-width="1.6" fill="none"/><circle cx="150" cy="30" r="3" fill="#3E7CB1"/></svg>
+        <div class="mname">Before / After Schematics</div>
+        <div class="mdesc">Tangled dashed red lines redrawn as clean orthogonal blue routing. Use whenever showing a workflow transformation.</div>
+      </div>
+      <div class="motif-card">
+        <svg width="100%" height="70" viewBox="0 0 200 70"><rect x="20" y="10" width="160" height="50" fill="none" stroke="#C9D6E3" stroke-width="1"/><line x1="20" y1="30" x2="180" y2="30" stroke="#C9D6E3" stroke-dasharray="2 3"/><text x="30" y="52" font-family="IBM Plex Mono" font-size="9" fill="#54677C">DWG. NO. 003 · REV B</text></svg>
+        <div class="mname">Title Block Labels</div>
+        <div class="mdesc">Every diagram or card carries a small mono-caps label, top-left, like a drawing's title block. Grounds the page in "documentation," not decoration.</div>
+      </div>
+      <div class="motif-card">
+        <svg width="100%" height="70" viewBox="0 0 200 70"><circle cx="100" cy="35" r="28" fill="none" stroke="#C0703B" stroke-width="2" transform="rotate(-8 100 35)"/><text x="100" y="39" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="#9C5527">APPROVED</text></svg>
+        <div class="mname">Rotated Stamp</div>
+        <div class="mdesc">A single tilted copper stamp per page for the one claim that needs to feel "certified." Never decorative, never repeated.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">07 — Voice &amp; Tone</div>
+      <h2 class="specimen-h2">Direct. Specific. No hype.</h2>
+      <p>The visual system only works if the copy earns it — technical confidence, not sales language.</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card"><div class="vlabel">Say</div><h4>"We build custom automation to bridge your tools."</h4><p>Concrete, specific, describes the actual mechanism.</p></div>
+      <div class="voice-card"><div class="vlabel">Not</div><h4>"Unlock the power of AI for your agency."</h4><p>Vague, hypey, could belong to any competitor.</p></div>
+      <div class="voice-card"><div class="vlabel">Structure</div><h4>Problem, named plainly → Fix, named plainly.</h4><p>Never bury the pain point in a euphemism. Recruiters should recognize their own desk immediately.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<section id="dodont">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">08 — Do / Don't</div>
+      <h2 class="specimen-h2">Keep new pages on-system.</h2>
+    </div>
+    <div class="dd-grid">
+      <div class="dd-col do">
+        <h4>Do</h4>
+        <ul>
+          <li>Use the 32px grid as a literal background texture in hero moments</li>
+          <li>Keep every diagram labeled like a real technical drawing</li>
+          <li>Let copper carry the only warm color on any given page</li>
+          <li>Use hairline borders and offset shadows instead of soft blur shadows</li>
+          <li>Write mono-caps labels in the same voice as an audit file</li>
+        </ul>
+      </div>
+      <div class="dd-col dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Add gradients, glassmorphism, or rounded bubble buttons</li>
+          <li>Introduce a second display typeface</li>
+          <li>Use stock photography of people in the hero</li>
+          <li>Let the stamp or dimension-line motif appear more than once per page</li>
+          <li>Mix warm accent colors — copper is the only one</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>VIZICLOUD SYSTEMS &amp; AUTOMATION</span>
+    <span>STYLE GUIDE v1.0 / EST. 2003</span>
+  </div>
+</footer>
+
+</body>
+</html>
